@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DiffGenerationConfig">
+    <option name="snapshotDbValue" value="dc01cb16-17ec-4f52-bd1a-27e55f142a83" />
+    <option name="snapshotModelValue" value="Order-Service:Order-Service" />
+    <option name="sourceModelValue" value="Order-Service:Order-Service" />
+    <option name="targetDbValue" value="dc01cb16-17ec-4f52-bd1a-27e55f142a83" />
+  </component>
+</project>
