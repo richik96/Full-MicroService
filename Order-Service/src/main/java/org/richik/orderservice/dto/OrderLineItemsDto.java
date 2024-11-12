@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Value;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.io.Serializable;
 
@@ -14,7 +15,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderLineItemsDto{
+    @NotNull
     private String skuCode;
-    private Double price;
-    private Integer quantity;
+    @NotNull
+    private double price;
+    @NotNull
+    private int quantity;
 }

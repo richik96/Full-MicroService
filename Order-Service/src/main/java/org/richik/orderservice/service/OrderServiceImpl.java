@@ -44,4 +44,15 @@ public class OrderServiceImpl implements OrderService{
 
         return orderLineItems;
     }
+
+    @Override
+    public List<Order> getAllOrders() {
+
+        try {
+            return orderRepo.findAll();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

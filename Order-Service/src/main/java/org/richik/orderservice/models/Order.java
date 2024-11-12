@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.List;
 
@@ -19,5 +20,6 @@ public class Order{
     private long id;
     private String orderNumber;
     @OneToMany(cascade = CascadeType.ALL)
+    @NotNull
     private List<OrderLineItems> orderLineItems;
 }

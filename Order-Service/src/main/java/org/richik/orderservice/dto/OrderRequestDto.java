@@ -5,8 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import org.antlr.v4.runtime.misc.NotNull;
 import org.richik.orderservice.models.OrderLineItems;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -21,6 +24,7 @@ public class OrderRequestDto {
 //        }
 //        this.orderLineItemsDtoList = orderLineItemsDtoList;
 //    }
-    private List<OrderLineItemsDto> orderLineItemsDtoList;
+    @NotNull
+    private List<OrderLineItemsDto> orderLineItemsDtoList = new ArrayList<>();
 
 }
