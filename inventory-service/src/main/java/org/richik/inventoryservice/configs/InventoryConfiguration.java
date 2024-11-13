@@ -21,6 +21,11 @@ public class InventoryConfiguration {
             inventory2.setSkuCode("Iphone 11");
             inventory2.setQuantity(20);
 
+            Inventory inventory3 = new Inventory();
+            inventory3.setSkuCode("Iphone 16");
+            inventory3.setQuantity(0);
+
+            inventoryRepository.save(inventory3);
             inventoryRepository.save(inventory);
             inventoryRepository.save(inventory2);
         };
