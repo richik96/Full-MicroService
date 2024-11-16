@@ -25,7 +25,7 @@ import java.util.UUID;
 public class OrderServiceImpl implements OrderService{
 
     private final OrderRepository orderRepo;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     @Override
     public Order placeOrder(OrderRequestDto order){
@@ -43,13 +43,14 @@ public class OrderServiceImpl implements OrderService{
                         .toList();
         log.info("new Order - {} is saved", order1.getOrderNumber());
         //call inventory service and place order if product is in stock
-        InventoryResponseDto[] inventoryResponseArray = webClient.get()
-                .uri("http://localhost:8085/inventory",
+        InventoryResponseDto[] inventoryResponseArray = webClientBuilder.build().get()
+                .uri("http://inventory-service/inventory",
                         uriBuilder -> uriBuilder.queryParam("skuCode", skuCodes)
                                 .build())
                 .retrieve()
                 .bodyToMono(InventoryResponseDto[].class)
-                .block();               //webcllient will call a synchronous api
+                .block();               //webclient will call a synchronous api
+        assert inventoryResponseArray != null;
         boolean allProductsInStock = Arrays.stream(inventoryResponseArray).allMatch(InventoryResponseDto::isInStock);
 
         if(!allProductsInStock){

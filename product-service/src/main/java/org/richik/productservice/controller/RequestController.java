@@ -18,7 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RequestController {
 
-    @Autowired
+//    @Autowired
     private ProductService productService;
     private ProductRequestDto productRequestDto;
 
