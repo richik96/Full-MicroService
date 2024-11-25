@@ -2,12 +2,13 @@ package org.richik.inventoryservice.controllers;
 
 
 import lombok.RequiredArgsConstructor;
+import org.richik.inventoryservice.configs.InventoryConfiguration;
 import org.richik.inventoryservice.services.InventoryService;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/inventory")

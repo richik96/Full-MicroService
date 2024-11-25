@@ -6,7 +6,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Archetype - Microservices-new</name>
-  <url>http://maven.apache.org</url>
+  <url>https://maven.apache.org</url>
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -16,8 +16,8 @@
     <module>product-service</module>
     <module>order-service</module>
     <module>inventory-service</module>
-      <module>discovery-server</module>
-      <module>api-gateway</module>
+    <module>api-gateway</module>
+    <module>discovery-server</module>
   </modules>
   <properties>
     <java.version>17</java.version>
